@@ -1,4 +1,4 @@
-package ru.mirea.trpp_second_6;
+package ru.mirea.trppsecond6;
 
 import io.micronaut.runtime.Micronaut;
 
@@ -7,6 +7,7 @@ public class Application {
 
     /**
      * Точка входа.
+     * 
      * @param args аргументы
      */
     public static void main(String[] args) {

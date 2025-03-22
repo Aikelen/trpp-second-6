@@ -1,4 +1,7 @@
-package ru.mirea.trpp_second_6.controllers;
+
+package ru.mirea.trppsecond6.controllers;
+
+import ru.mirea.trpp_second_6.entity.Message;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import io.micronaut.http.HttpResponse;
@@ -18,11 +21,14 @@ public class MessageController {
 
     /** Конструктор. */
     public MessageController() {
-        messageList = new CsvToBeanBuilder<Message>(new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(Message.class).build().parse();
+        messageList = new CsvToBeanBuilder<Message>(
+                new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(Message.class)
+                .build().parse();
     }
 
     /**
      * Получить список сообщений.
+     * 
      * @return список сообщений
      */
     @Get()
@@ -32,6 +38,7 @@ public class MessageController {
 
     /**
      * Найти сообщение по идентификатору.
+     * 
      * @param id идентификатор сообщения
      * @return Сообщение, если есть, иначе 404 ошибка
      */
